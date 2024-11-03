@@ -1,7 +1,7 @@
 import banner from '../../assets/banner.jpg'
 export default function Banner() {
     return (
-        <div className="relative flex flex-col items-center mb-72">
+        <div className="relative flex flex-col items-center mb-64">
             <div className="hero min-h-screen bg-[#9538E2] lg:pb-56">
                 <div className="hero-content text-center">
                     <div className="flex flex-col items-center text-white">
