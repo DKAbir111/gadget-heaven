@@ -1,7 +1,14 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+
 const Root = () => {
     return (
         <div>
-            <p className="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, nihil.</p>
+            <Navbar />
+            <Outlet />
+            <Footer />
+
         </div>
     );
 };
