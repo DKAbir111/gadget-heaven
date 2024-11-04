@@ -1,16 +1,18 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 
 export default function Navbar() {
+    const location = useLocation();
+    console.log(location.pathname);
     const link = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/statistics'>Statistics</NavLink></li>
         <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
     </>
     return (
-        <div className="container md:mx-auto">
-            <div className="navbar bg-base-100">
+        <div className={location.pathname === '/' ? 'bg-[#9538E2]' : 'bg-base-100'}>
+            <div className="navbar container md:mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

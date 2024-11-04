@@ -3,6 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 const Root = () => {
+    // let location = useLocation();
+    // console.log(location.pathname);
     return (
         <div>
             <Navbar />

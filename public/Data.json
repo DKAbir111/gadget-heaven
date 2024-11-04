@@ -113,7 +113,7 @@
         "product_title": "Anker PowerCore 20100",
         "product_image": "https://i.ibb.co.com/bXDfdWr/8.jpg",
         "category": "Accessories",
-        "price": 39.99,
+        "price": 59.99,
         "description": "High-capacity portable charger.",
         "Specification": [
             "20100mAh capacity",
@@ -305,5 +305,23 @@
         ],
         "availability": true,
         "rating": 4.7
+    },
+    {
+        "product_id": "21",
+        "product_title": "iPhone 16 Pro Max",
+        "product_image": "https://i.ibb.co.com/VH06r9P/21.jpg",
+        "category": "iPhones",
+        "price": 1199.00,
+        "description": "The most powerful iPhone ever, featuring a revolutionary design, incredible camera system, and blazing-fast performance.",
+        "Specification": [
+            "A18 Bionic chip",
+            "6.9-inch Super Retina XDR display with 120Hz refresh rate.",
+            "48MP Quad-camera system with improved low-light performance.",
+            "Up to 1TB of storage",
+            "Always-On display",
+            "Generative AI features in various apps"
+        ],
+        "availability": true,
+        "rating": 5.0
     }
 ]
