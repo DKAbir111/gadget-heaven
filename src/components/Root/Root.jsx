@@ -1,18 +1,21 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import { CartContext } from "../Context/cartContext";
+import { useState } from "react";
 
 const Root = () => {
-    // let location = useLocation();
-    // console.log(location.pathname);
+    const [addCart, setAddCart] = useState([])
     return (
-        <div>
-            <Navbar />
-            <Outlet />
-            <Footer />
+        <CartContext.Provider value={{ addCart, setAddCart }}>
+            <div>
+                <Navbar />
+                <Outlet />
+                <Footer />
+            </div>
 
-        </div>
+        </CartContext.Provider>
     );
 };
 
-export default Root; 1
+export default Root;

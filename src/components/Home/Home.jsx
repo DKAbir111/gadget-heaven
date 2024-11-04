@@ -8,11 +8,11 @@ export default function Home() {
     //All data
     const initialData = useLoaderData();
     const [data, setData] = useState(initialData);
-    console.log(data);
+
 
     //find the unique category using new Set
     const uniqueCategory = [...new Set(initialData.map(item => item.category))]
-    console.log(uniqueCategory);
+
 
     //Keep track of active category
     const [active, setActive] = useState('All Product')

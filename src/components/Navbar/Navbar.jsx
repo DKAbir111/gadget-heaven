@@ -1,10 +1,14 @@
 import { NavLink, useLocation } from "react-router-dom"
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { CartContext } from "../Context/cartContext";
+
 
 export default function Navbar() {
     const location = useLocation();
-    console.log(location.pathname);
+    const value = useContext(CartContext)
+    const { addCart } = value;
     const link = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/statistics'>Statistics</NavLink></li>
@@ -49,7 +53,7 @@ export default function Navbar() {
                             <div className="indicator">
 
                                 <IoCartOutline className="text-2xl" />
-                                <span className="badge badge-sm indicator-item">2</span>
+                                <span className="badge badge-sm indicator-item">{addCart.length}</span>
                             </div>
                         </div>
                         <div
@@ -74,6 +78,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }

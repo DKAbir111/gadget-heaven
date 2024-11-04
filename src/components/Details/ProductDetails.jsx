@@ -2,12 +2,38 @@ import { useLoaderData, useParams } from "react-router-dom"
 import ReactStars from "react-rating-stars-component";
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
+import { toast } from 'react-toastify';
+import { useContext } from "react";
+import { CartContext } from "../Context/cartContext";
+
 
 export default function ProductDetails() {
     const { id } = useParams();
     const data = useLoaderData();
     const datum = data.find(datum => datum.product_id === id);
-    console.log(datum);
+
+    const notify = (message) => {
+        message === "Item added to cart"
+            ? toast.success(message, {
+                position: "top-center",
+            })
+            : toast.error(message, {
+                position: "top-center",
+            });
+    };
+
+
+    //Add to cart functionality error
+    const value = useContext(CartContext)
+    const { addCart, setAddCart } = value
+    const handleAddToCard = (datum) => {
+        if (!addCart.includes(datum)) {
+            setAddCart([...addCart, datum]);
+            notify('Item added to cart');
+            return
+        }
+        notify('Product already added to cart');
+    }
 
 
     const { product_image, product_title, price, availability, description, Specification, rating } = datum;
@@ -40,7 +66,7 @@ export default function ProductDetails() {
                     <h3 className="text-3xl font-semibold">{product_title}</h3>
                     <p className="text-xl">Price: ${price}</p>
                     <div>
-                        <p className={`btn btn-sm  rounded-full ${availability ? "bg-[#309C081A] text-[#309C08] border-[#309C08]" : "bg-red-200 text-red-500 border-red-500"}`}>{availability ? 'In Stock' : 'Out of Stock'}</p>
+                        <p className={`btn btn-sm  rounded - full ${availability ? "bg-[#309C081A] text-[#309C08] border-[#309C08]" : "bg-red-200 text-red-500 border-red-500"} `}>{availability ? 'In Stock' : 'Out of Stock'}</p>
                     </div>
 
                     <p className="opacity-70">{description}</p>
@@ -59,7 +85,7 @@ export default function ProductDetails() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                        <button className="btn bg-[#9538E2] rounded-full text-white">Add To Card < IoCartOutline className="text-2xl" /></button>
+                        <button className="btn bg-[#9538E2] rounded-full text-white" onClick={() => handleAddToCard(datum)}>Add To Card < IoCartOutline className="text-2xl" /></button>
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle shadow-md border border-base-300">
                             <CiHeart className="text-2xl" />
                         </div>
@@ -70,18 +96,3 @@ export default function ProductDetails() {
 
     )
 }
-// {
-//     "product_id": "20",
-//     "product_title": "Oculus Quest 2",
-//     "product_image": "https://i.ibb.co.com/wYdnb87/20.jpg",
-//     "category": "Accessories",
-//     "price": 299.99,
-//     "description": "All-in-one virtual reality headset.",
-//     "Specification": [
-//         "64GB storage",
-//         "Standalone operation",
-//         "High-resolution display"
-//     ],
-//     "availability": true,
-//     "rating": 4.7
-// },
