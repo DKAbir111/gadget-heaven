@@ -1,15 +1,16 @@
+import PropTypes from 'prop-types'
 export default function Datum({ datum }) {
     const { product_title, price, product_image } = datum
     return (
 
-        <div className="card bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10">
+        <div className="card bg-base-100 shadow-xl border">
+            <figure className="px-10 pt-10 h-64">
                 <img
                     src={product_image}
                     alt="Products"
-                    className="rounded-xl" />
+                    className="rounded-xl h-full" />
             </figure>
-            <div className="card-body items-center text-center">
+            <div className="card-body items-start">
                 <h2 className="card-title">{product_title}</h2>
                 <p>Price: {price}$</p>
                 <div className="card-actions">
@@ -19,6 +20,10 @@ export default function Datum({ datum }) {
         </div>
 
     )
+}
+
+Datum.propTypes = {
+    datum: PropTypes.object.isRequired,
 }
 
 // {
