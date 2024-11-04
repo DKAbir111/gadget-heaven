@@ -52,8 +52,12 @@ export default function ProductDetails() {
                             ))
                         }
                     </ol>
+                    <p className="font-bold">Rating: </p>
+                    <div className="flex items-center gap-3">
+                        <ReactStars {...ratingStar} />
+                        <p className="btn btn-sm rounded-full">{rating}</p>
+                    </div>
 
-                    <ReactStars {...ratingStar} />
                     <div className="flex items-center gap-2">
                         <button className="btn bg-[#9538E2] rounded-full text-white">Add To Card < IoCartOutline className="text-2xl" /></button>
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle shadow-md border border-base-300">
