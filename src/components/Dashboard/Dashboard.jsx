@@ -5,7 +5,7 @@ import { ImSortAmountDesc } from "react-icons/im";
 import { WishContext } from "../Context/wishContext";
 import AddWish from "./AddWish";
 import modalImg from "../../assets/Group.png"
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
     const value = useContext(CartContext)
@@ -34,8 +34,11 @@ export default function Dashboard() {
 
     }
 
+    //Close button after purchase
+    const navigate = useNavigate();
     const handleClose = () => {
         setAddCart([]);
+        navigate('/')
     }
     return (
         <div className="relative flex flex-col items-center">
@@ -89,7 +92,7 @@ export default function Dashboard() {
                     </p>
                     <div className="modal-action">
                         <form method="dialog">
-                            <Link to='/'><button className="btn bg-[#9538E2] text-white px-10" onClick={handleClose}>Close</button></Link>
+                            <button className="btn bg-[#9538E2] text-white px-10" onClick={handleClose}>Close</button>
                         </form>
                     </div>
                 </div>

@@ -36,6 +36,9 @@ export default function ProductDetails() {
 
     }
 
+    const isWishList = addWish.map(item => item.product_id).includes(datum.product_id);
+
+
     //Add to cart functionality error
     const value = useContext(CartContext)
     const { handleAddToCart } = value
@@ -91,7 +94,7 @@ export default function ProductDetails() {
 
                     <div className="flex items-center gap-2">
                         <button className="btn bg-[#9538E2] rounded-full text-white" onClick={() => handleAddToCart(datum)}>Add To Card < IoCartOutline className="text-2xl" /></button>
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle shadow-md border border-base-300" onClick={() => handleAddToWish(datum)}>
+                        <div tabIndex={0} role="button" className={`btn btn-ghost btn-circle shadow-md border border-base-300 ${isWishList ? "btn-disabled" : ""}`} onClick={() => handleAddToWish(datum)}>
                             <CiHeart className="text-2xl" />
                         </div>
                     </div>
