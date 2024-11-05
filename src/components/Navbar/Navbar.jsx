@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom"
+import { Link, NavLink, useLocation } from "react-router-dom"
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { useContext } from "react";
@@ -63,10 +63,13 @@ export default function Navbar() {
                             tabIndex={0}
                             className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
                             <div className="card-body">
-                                <span className="text-lg font-bold">8 Items</span>
-                                <span className="text-info">Subtotal: $999</span>
+                                <span className="text-lg font-bold">{addCart.length} Items</span>
+                                <span className="text-info">
+                                    Subtotal: $
+                                    {addCart.reduce((total, item) => total + item.price, 0).toFixed(2)}
+                                </span>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary btn-block">View cart</button>
+                                    <Link to='/dashboard' className="btn btn-block text-white bg-[#9538E2]">View cart</Link>
                                 </div>
                             </div>
                         </div>
