@@ -21,7 +21,7 @@ export default function ProductDetails() {
                 position: "top-center",
             });
     };
-
+    //Add wish list functionality
 
     //Add to cart functionality error
     const value = useContext(CartContext)
