@@ -9,7 +9,7 @@ export default function Banner() {
                         <p className="py-6 md:w-3/4">
                             Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!
                         </p>
-                        <button className="btn bg-white text-[#9538E2] rounded-full font-bold">Get Started</button>
+                        <button className="btn bg-white text-[#9538E2] rounded-full font-bold"><a href="#main">Get Started</a></button>
                     </div>
                 </div>
             </div>
