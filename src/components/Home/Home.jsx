@@ -33,7 +33,7 @@ export default function Home() {
         setData([]);
     }
     return (
-        <div className="bg-[#09080F0D]">
+        <div className="bg-[#09080F0D] pb-20">
             <Banner />
             <div className="container md:mx-auto p-2">
                 <h2 className="text-3xl font-semibold text-center mb-10">Explore Cutting-Edge Gadgets</h2>
