@@ -37,8 +37,15 @@ const Root = () => {
     }
     //For wish list
     const [addWish, setAddWish] = useState([])
+
+    const handleSort = () => {
+        const sortedProducts = [...addCart].sort((a, b) => b.price - a.price);  // Descending order
+        setAddCart(sortedProducts);
+        console.log("Sorted by price descending");
+    };
+
     return (
-        <CartContext.Provider value={{ handleAddToCart, addCart, handleDelete }}>
+        <CartContext.Provider value={{ handleAddToCart, addCart, handleDelete, handleSort }}>
             <WishContext.Provider value={{ addWish, setAddWish, handleWishDelete }}>
                 <div>
                     <Navbar />
