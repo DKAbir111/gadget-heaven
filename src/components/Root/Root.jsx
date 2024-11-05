@@ -44,8 +44,9 @@ const Root = () => {
         console.log("Sorted by price descending");
     };
 
+
     return (
-        <CartContext.Provider value={{ handleAddToCart, addCart, handleDelete, handleSort }}>
+        <CartContext.Provider value={{ handleAddToCart, addCart, handleDelete, handleSort, setAddCart, notify }}>
             <WishContext.Provider value={{ addWish, setAddWish, handleWishDelete }}>
                 <div>
                     <Navbar />
