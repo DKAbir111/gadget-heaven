@@ -9,7 +9,6 @@ import {
     CartesianGrid,
     Tooltip,
     Legend,
-    Scatter,
     ResponsiveContainer,
 } from 'recharts';
 

@@ -95,7 +95,7 @@ export default function ProductDetails() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                        <button className="btn bg-[#9538E2] rounded-full text-white" onClick={() => handleAddToCart(datum)}>Add To Card < IoCartOutline className="text-2xl" /></button>
+                        <button className={`btn bg-[#9538E2] rounded-full text-white ${!availability ? "btn-disabled" : ""}`} onClick={() => handleAddToCart(datum)}>Add To Card < IoCartOutline className="text-2xl" /></button>
                         <div tabIndex={0} role="button" className={`btn btn-ghost btn-circle shadow-md border border-base-300 ${isWishList ? "btn-disabled" : ""}`} onClick={() => handleAddToWish(datum)}>
                             <CiHeart className="text-2xl" />
                         </div>
