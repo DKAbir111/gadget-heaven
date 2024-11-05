@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types'
+import { useContext } from 'react';
 import { MdDeleteForever } from "react-icons/md";
+import { CartContext } from '../Context/cartContext';
 export default function AddCart({ item }) {
     const { product_title, product_image, description, price } = item;
+    const value = useContext(CartContext);
+    const { handleDelete } = value;
     return (
         <div className="flex px-2 py-5 md:p-5 rounded-lg bg-white border lg:w-3/5  mx-auto items-center mt-5 justify-between">
             <div className="flex gap-5 items-center">
@@ -15,7 +19,7 @@ export default function AddCart({ item }) {
 
                 </div>
             </div>
-            <div className="text-4xl hover:text-red-500 cursor-pointer">
+            <div className="text-4xl hover:text-red-500 cursor-pointer" onClick={() => handleDelete(item)}>
                 <MdDeleteForever />
             </div>
 

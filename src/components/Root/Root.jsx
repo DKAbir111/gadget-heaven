@@ -18,19 +18,28 @@ const Root = () => {
                 position: "top-center",
             });
     };
-    const handleAddToCard = (datum) => {
-        if (!addCart.includes(datum)) {
+    const handleAddToCart = (datum) => {
+        if (!addCart.map(item => item.product_id).includes(datum.product_id)) {
             setAddCart([...addCart, datum]);
             notify('Item added to cart');
-            return
+            return;
         }
         notify('Product already added to cart');
+    }
+
+    //Handle Delete
+    const handleDelete = (item) => {
+        setAddCart(addCart.filter(product => product !== item))
+    }
+    //Handle WishDelete
+    const handleWishDelete = (item) => {
+        setAddWish(addWish.filter(product => product !== item))
     }
     //For wish list
     const [addWish, setAddWish] = useState([])
     return (
-        <CartContext.Provider value={{ handleAddToCard, addCart }}>
-            <WishContext.Provider value={{ addWish, setAddWish }}>
+        <CartContext.Provider value={{ handleAddToCart, addCart, handleDelete }}>
+            <WishContext.Provider value={{ addWish, setAddWish, handleWishDelete }}>
                 <div>
                     <Navbar />
                     <Outlet />

@@ -3,12 +3,15 @@ import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { useContext } from "react";
 import { CartContext } from "../Context/cartContext";
+import { WishContext } from "../Context/wishContext";
 
 
 export default function Navbar() {
     const location = useLocation();
     const value = useContext(CartContext)
     const { addCart } = value;
+    const wish = useContext(WishContext)
+    const { addWish } = wish;
     const link = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/statistics'>Statistics</NavLink></li>
@@ -73,7 +76,7 @@ export default function Navbar() {
                         <div className="indicator">
 
                             <CiHeart className="text-2xl" />
-                            <span className="badge badge-sm indicator-item">2</span>
+                            <span className="badge badge-sm indicator-item">{addWish.length}</span>
                         </div>
                     </div>
                 </div>

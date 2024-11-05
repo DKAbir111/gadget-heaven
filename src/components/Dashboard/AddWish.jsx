@@ -2,10 +2,13 @@ import PropTypes from 'prop-types'
 import { useContext } from 'react';
 import { MdDeleteForever } from "react-icons/md";
 import { CartContext } from '../Context/cartContext';
+import { WishContext } from '../Context/wishContext';
 export default function AddWish({ item }) {
     const { product_title, product_image, description, price } = item;
     const value = useContext(CartContext);
-    const { handleAddToCard } = value;
+    const { handleAddToCart } = value;
+    const wish = useContext(WishContext);
+    const { handleWishDelete } = wish;
     return (
         <div>
             <div className="flex px-2 py-5 md:p-5 rounded-lg bg-white border lg:w-3/5  mx-auto items-center mt-5 justify-between">
@@ -18,12 +21,12 @@ export default function AddWish({ item }) {
                         <p className="opacity-70">{description}</p>
                         <p className="text-lg font-semibold">Price: ${price}</p>
                         <div>
-                            <button className='btn btn-sm rounded-full bg-[#9538E2] text-white' onClick={() => handleAddToCard(item)}>Add to Card</button>
+                            <button className='btn btn-sm rounded-full bg-[#9538E2] text-white' onClick={() => handleAddToCart(item)}>Add to Card</button>
                         </div>
 
                     </div>
                 </div>
-                <div className="text-4xl hover:text-red-500 cursor-pointer">
+                <div className="text-4xl hover:text-red-500 cursor-pointer" onClick={() => handleWishDelete(item)}>
                     <MdDeleteForever />
                 </div>
 
