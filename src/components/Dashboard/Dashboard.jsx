@@ -6,6 +6,7 @@ import { WishContext } from "../Context/wishContext";
 import AddWish from "./AddWish";
 import modalImg from "../../assets/Group.png"
 import { useNavigate } from "react-router-dom";
+import PageTitle from "../PageTitle/PageTitle";
 
 export default function Dashboard() {
     const value = useContext(CartContext)
@@ -42,6 +43,7 @@ export default function Dashboard() {
     }
     return (
         <div className="relative flex flex-col items-center">
+            <PageTitle title="Dashboard" />
             <div className="hero  bg-[#9538E2] py-10 md:p-10">
                 <div className="hero-content text-center">
                     <div className="flex flex-col items-center text-white">

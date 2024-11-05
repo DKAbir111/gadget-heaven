@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { useContext } from "react";
 import { CartContext } from "../Context/cartContext";
 import { WishContext } from "../Context/wishContext";
+import PageTitle from "../PageTitle/PageTitle";
 
 
 export default function ProductDetails() {
@@ -54,6 +55,7 @@ export default function ProductDetails() {
     return (
 
         <div className="relative flex flex-col items-center md:mb-[450px] ">
+            <PageTitle title="Product Details" />
             <div className="hero  bg-[#9538E2] pb-32 md:pb-56">
                 <div className="hero-content text-center">
                     <div className="flex flex-col items-center text-white">

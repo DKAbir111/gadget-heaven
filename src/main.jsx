@@ -8,7 +8,7 @@ import {
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Root from './components/Root/Root';
-import ErrorPage from './Error/ErrorPage';
+import ErrorPage from './components/Error/ErrorPage';
 import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
 import Statistics from './components/Statistics/Statistics';

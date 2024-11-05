@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import Datum from "./Datum";
 import { useState } from "react";
+import PageTitle from "../PageTitle/PageTitle";
 
 
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
     }
     return (
         <div className="bg-[#09080F0D] pb-20">
+            <PageTitle title={"Home"} />
             <Banner />
             <div className="container md:mx-auto p-2" id="main">
                 <h2 className="text-3xl font-semibold text-center mb-10">Explore Cutting-Edge Gadgets</h2>

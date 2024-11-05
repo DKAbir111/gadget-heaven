@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom"
-import notFound from "../assets/notFound.png"
+import notFound from "../../assets/notFound.png"
 
 export default function ErrorPage() {
     const error = useRouteError();
