@@ -2,10 +2,16 @@ import { useContext, useState } from "react"
 import { CartContext } from "../Context/cartContext"
 import AddCart from "./AddCart";
 import { ImSortAmountDesc } from "react-icons/im";
+import { WishContext } from "../Context/wishContext";
+import AddWish from "./AddWish";
 
 export default function Dashboard() {
     const value = useContext(CartContext)
     const { addCart } = value;
+
+    const wish = useContext(WishContext)
+    const { addWish } = wish;
+
     const [active, setActive] = useState("Cart")
     const handleClick = (object) => {
         if (object === "Cart") {
@@ -43,7 +49,7 @@ export default function Dashboard() {
                 {
                     active === "Cart" ?
                         addCart.map(item => <AddCart item={item} key={item.product_id} />) :
-                        <h1>Hello from wish list</h1>
+                        addWish.map(item => <AddWish item={item} key={item.product_id} />)
                 }
 
 

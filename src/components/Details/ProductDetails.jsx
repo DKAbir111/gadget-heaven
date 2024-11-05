@@ -5,6 +5,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { toast } from 'react-toastify';
 import { useContext } from "react";
 import { CartContext } from "../Context/cartContext";
+import { WishContext } from "../Context/wishContext";
 
 
 export default function ProductDetails() {
@@ -12,8 +13,9 @@ export default function ProductDetails() {
     const data = useLoaderData();
     const datum = data.find(datum => datum.product_id === id);
 
-    const notify = (message) => {
-        message === "Item added to cart"
+
+    const notifyWish = (message) => {
+        message === "Item added to wishlist"
             ? toast.success(message, {
                 position: "top-center",
             })
@@ -22,18 +24,21 @@ export default function ProductDetails() {
             });
     };
     //Add wish list functionality
+    const wish = useContext(WishContext)
+    const { addWish, setAddWish } = wish;
+    const handleAddToWish = (datum) => {
+        if (!addWish.includes(datum)) {
+            setAddWish([...addWish, datum]);
+            notifyWish('Item added to wishlist');
+            return
+        }
+        notifyWish('Product already added to Wishlist');
+
+    }
 
     //Add to cart functionality error
     const value = useContext(CartContext)
-    const { addCart, setAddCart } = value
-    const handleAddToCard = (datum) => {
-        if (!addCart.includes(datum)) {
-            setAddCart([...addCart, datum]);
-            notify('Item added to cart');
-            return
-        }
-        notify('Product already added to cart');
-    }
+    const { handleAddToCard } = value
 
 
     const { product_image, product_title, price, availability, description, Specification, rating } = datum;
@@ -86,7 +91,7 @@ export default function ProductDetails() {
 
                     <div className="flex items-center gap-2">
                         <button className="btn bg-[#9538E2] rounded-full text-white" onClick={() => handleAddToCard(datum)}>Add To Card < IoCartOutline className="text-2xl" /></button>
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle shadow-md border border-base-300">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle shadow-md border border-base-300" onClick={() => handleAddToWish(datum)}>
                             <CiHeart className="text-2xl" />
                         </div>
                     </div>
