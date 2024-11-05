@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/statistics",
         element: <Statistics />,
+        loader: () => fetch('../public/Data.json')
       },
       {
         path: "/product/:id",
