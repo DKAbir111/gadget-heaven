@@ -54,7 +54,7 @@ export default function ProductDetails() {
     };
     return (
 
-        <div className="relative flex flex-col items-center md:mb-[450px] ">
+        <div className="relative flex flex-col items-center md:mb-[550px] ">
             <PageTitle title="Product Details" />
             <div className="hero  bg-[#9538E2] pb-32 md:pb-56">
                 <div className="hero-content text-center">
@@ -62,8 +62,6 @@ export default function ProductDetails() {
                         <h1 className="text-4xl font-bold">Product Details</h1>
                         <p className="py-6 md:w-3/4">
                             Explore our exclusive range of cutting-edge gadgets! From innovative smart devices that elevate your daily tasks to stylish accessories that enhance your lifestyle, we have everything you need.</p>
-
-
                     </div>
                 </div>
             </div>

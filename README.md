@@ -5,7 +5,7 @@ Welcome to **GadgetHeaven**, your go-to destination for the latest and greatest 
 ## Live Website
 
 You can check out the live demo of **GadgetHeaven** here:  
-**[Live Demo Link](#)** *(https://astounding-kelpie-4abc21.netlify.app/)*
+**[Live Demo Link](#)** *(https://cheery-seahorse-77bc30.netlify.app/)*
 
 ## Project Overview
 
