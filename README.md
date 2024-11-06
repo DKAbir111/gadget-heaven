@@ -5,7 +5,7 @@ Welcome to **GadgetHeaven**, your go-to destination for the latest and greatest 
 ## Live Website
 
 You can check out the live demo of **GadgetHeaven** here:  
-**[Live Demo Link](#)** *()*
+**[Live Demo Link](#)** *(https://splendorous-klepon-12f8f4.netlify.app/)*
 
 ## Project Overview
 
@@ -37,7 +37,7 @@ To run the project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/gadget-heaven.git
+   git clone https://github.com/DKAbir111/gadget-heaven.git
    ```
 
 2. **Navigate to the project directory**:
