@@ -16,6 +16,7 @@ export default function Navbar() {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/statistics'>Statistics</NavLink></li>
         <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+        <li><NavLink to='/help'>Help and Support</NavLink></li>
     </>
     return (
         <div className={location.pathname === '/' ? 'bg-[#9538E2]' : 'bg-base-100'}>
@@ -42,7 +43,7 @@ export default function Navbar() {
                             {link}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl text-white">Gadget Heaven</a>
+                    <a className={`${location.pathname === '/' ? "text-white" : "text-black"} btn btn-ghost text-xl`}>Gadget Heaven</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
