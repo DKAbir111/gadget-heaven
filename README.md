@@ -80,7 +80,8 @@ Certainly! Here's the updated section with **React Router** highlighting both **
 - **React Icons** for displaying cart, wishlist, and other icons.
 - **Recharts** for displaying charts in the statistics page.
 - **React Rating** component for product ratings.
-- **LocalStorage** for persisting cart and wishlist data across page reloads (optional).
+- **React Helmet Async** for managing the document head, enabling dynamic title and meta tags for each page for better SEO and user experience.
+- **LocalStorage** for persisting cart and wishlist data across page reloads.
 - **Tailwind CSS** for utility-first CSS styling.
 - **DaisyUI** for pre-built Tailwind components (e.g., buttons, modals, form elements) to speed up UI development.
 
