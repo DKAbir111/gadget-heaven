@@ -5,10 +5,11 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { sendEmailVerification } from "firebase/auth";
 import { auth } from "../../Firebase/firebase.init";
+import { toast } from "react-toastify";
 
 
 export default function SignUp() {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, logOut } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -43,9 +44,12 @@ export default function SignUp() {
                     sendEmailVerification(auth.currentUser)
                         .then(() => {
                             setSuccess("Verification email sent please check.");
+                            event.target.reset();
+                            logOut();
+                            navigate('/auth/login')
+                            toast("Verification email sent please check")
+
                         })
-                    navigate('/')
-                    event.target.reset()
                 })
         } catch (error) {
             setError(error.message);

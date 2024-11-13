@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/CreateContext";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 
 export default function Login() {
@@ -15,11 +16,12 @@ export default function Login() {
         signInWithGoogle()
             .then(result => {
                 console.log(result)
+                toast("Successfully signed in,Welcome!")
+                navigate('/');
             })
             .catch(error => {
                 console.error("Google sign-in failed", error.message)
             })
-        navigate('/');
     }
     const handleLogin = (event) => {
         event.preventDefault()
@@ -29,11 +31,15 @@ export default function Login() {
         logIn(email, password)
             .then(result => {
                 if (!result.user.emailVerified) {
-                    setError("email verification failed")
+                    setError("Email verification failed")
+                    return;
                 }
                 else {
                     console.log(result)
                     navigate('/');
+                    event.target.reset()
+                    toast("Successfully signed in,Welcome!")
+
                 }
             })
             .catch(error => {
