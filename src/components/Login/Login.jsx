@@ -70,7 +70,7 @@ export default function Login() {
 
                         </span>
                         <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            <Link to='/auth/forgetpassword' className="label-text-alt link link-hover">Forgot password?</Link>
                         </label>
                     </div>
                     <div><p className="text-center text-xs text-red-500">{error}</p></div>

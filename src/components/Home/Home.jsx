@@ -10,7 +10,7 @@ export default function Home() {
     const initialData = useLoaderData();
     const [data, setData] = useState(initialData);
 
-    console.log(initialData);
+
     //find the unique category using new Set
     const uniqueCategory = [...new Set(initialData.map(item => item.category))]
 
