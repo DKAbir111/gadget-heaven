@@ -5,16 +5,19 @@ Welcome to **GadgetHeaven**, your go-to destination for the latest and greatest 
 ## Live Website
 
 You can check out the live demo of **GadgetHeaven** here:  
-**[Live Demo Link](#)** *(https://cheery-seahorse-77bc30.netlify.app/)*
+**[Live Demo Link](#)** *(https://sweet-cassata-668eb4.netlify.app/)*
+
+---
 
 ## Project Overview
 
-GadgetHeaven is a feature-rich e-commerce platform where users can browse, filter, and purchase the latest gadgets. It offers easy navigation, a smooth shopping experience, and various functionalities to manage products in the cart and wishlist.
+**GadgetHeaven** is a feature-rich e-commerce platform where users can browse, filter, and purchase the latest gadgets. It offers easy navigation, a smooth shopping experience, and various functionalities to manage products in the cart and wishlist.
 
 ---
 
 ## Features
 
+### Core E-Commerce Features
 - **Responsive Navbar** with active route highlighting.
 - **Product Categories Sidebar** to filter products by categories (Computers, Phones, etc.).
 - **Product Cards**: Each card displays detailed product information such as price, image, description, and specifications.
@@ -28,6 +31,13 @@ GadgetHeaven is a feature-rich e-commerce platform where users can browse, filte
 - **Real-time Cart Updates**: Display real-time updates for total items and subtotal price in the cart.
 - **In-stock/Out-of-stock Handling**: Products that are out of stock cannot be added to the cart.
 - **Prevent Duplicate Additions**: Users cannot add the same product to the cart twice or wishlist more than once.
+
+### **Authentication Features:**
+- **Firebase Authentication**: Secure and scalable user authentication integrated with Firebase.
+- **Email/Password Login**: Users can sign up and log in using their email and password.
+- **Google Login**: Users can log in easily with their Google account.
+- **Password Recovery**: Users can recover their password via email if they forget it.
+- **Private Routes**: Secure private routes for authenticated users only, ensuring sensitive actions are protected.
 
 ---
 
@@ -61,18 +71,6 @@ To run the project locally, follow these steps:
 
 ## React Concepts and Tools Used
 
-Certainly! Here’s the updated section reflecting the use of **Tailwind CSS** and **DaisyUI** along with the other libraries and tools:
-
----
-
-## React Concepts and Tools Used
-
-Certainly! Here's the updated section with **React Router** highlighting both **navigation** and **dynamic routes**:
-
----
-
-## React Concepts and Tools Used
-
 - **React Router** for navigation between pages and dynamic routes (enabling seamless transitions between different pages and loading content dynamically based on URL parameters).
 - **Context API** for managing global state (Cart, Wishlist).
 - **React Hooks** (`useState`, `useEffect`, `useNavigate`, `useLocation`) for managing component state and handling navigation.
@@ -84,7 +82,10 @@ Certainly! Here's the updated section with **React Router** highlighting both **
 - **LocalStorage** for persisting cart and wishlist data across page reloads.
 - **Tailwind CSS** for utility-first CSS styling.
 - **DaisyUI** for pre-built Tailwind components (e.g., buttons, modals, form elements) to speed up UI development.
-
+- **Firebase Authentication** for user authentication, including email/password and Google login, as well as password recovery.
+- **Private Routes** for securing pages that require authentication.
+- **Axios** for handling HTTP requests to interact with the backend (e.g., fetching product data).
+- **Form Validation** with simple validation logic for handling user inputs and ensuring accurate form submission.
 
 ---
 
@@ -164,7 +165,11 @@ Certainly! Here's the updated section with **React Router** highlighting both **
 - Add more filters for products (by brand, rating, etc.).
 - Allow users to leave product reviews and ratings.
 
+---
+
 ## Authors and Acknowledgments
 
 - **Darun Karas Abir** (GitHub: [@DKAbir111](https://github.com/DKAbir111))
 - Special thanks to all contributors and users who provide feedback.
+
+---
