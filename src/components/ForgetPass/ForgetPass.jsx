@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { auth } from "../../Firebase/firebase.init";
+import PageTitle from "../PageTitle/PageTitle";
 
 export default function ForgetPass() {
     const emailRef = useRef();
@@ -40,6 +41,7 @@ export default function ForgetPass() {
 
     return (
         <div className="hero bg-base-100 px-2 py-20">
+            <PageTitle title="Password-Recovery" />
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-sm py-12">
                 <h3 className="text-lg text-center font-semibold">Password Recovery</h3>
                 <form className="card-body py-5">

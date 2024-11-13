@@ -6,6 +6,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { sendEmailVerification } from "firebase/auth";
 import { auth } from "../../Firebase/firebase.init";
 import { toast } from "react-toastify";
+import PageTitle from "../PageTitle/PageTitle";
 
 
 export default function SignUp() {
@@ -58,6 +59,7 @@ export default function SignUp() {
 
     return (
         <div className="hero bg-base-100  px-2 py-20">
+            <PageTitle title="Signup" />
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-sm  py-12">
                 <h3 className="text-lg text-center">Create your account</h3>
                 <form className="card-body py-5" onSubmit={handleSubmit}>

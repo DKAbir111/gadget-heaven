@@ -5,6 +5,7 @@ import { AuthContext } from "../../Context/CreateContext";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
+import PageTitle from "../PageTitle/PageTitle";
 
 
 export default function Login() {
@@ -51,6 +52,7 @@ export default function Login() {
 
     return (
         <div className="hero bg-base-100  px-2 py-20">
+            <PageTitle title="Login" />
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-sm  py-12">
                 <h3 className="text-lg text-center">Login to <span className="font-semibold">GadgetHeaven</span></h3>
                 <form className="card-body py-5" onSubmit={handleLogin}>
