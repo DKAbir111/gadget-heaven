@@ -2,11 +2,13 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { CartContext } from "../Context/cartContext";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { WishContext } from "../Context/wishContext";
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import { AuthContext } from "../../Context/CreateContext";
 
 const Root = () => {
+    const { user } = useContext(AuthContext)
     //Add to cart functionality error
     const [addCart, setAddCart] = useState([])
     const notify = (message) => {
@@ -19,6 +21,10 @@ const Root = () => {
             });
     };
     const handleAddToCart = (datum) => {
+        if (!user) {
+            notify('Please log in to continue.');
+            return;
+        }
         if (!addCart.map(item => item.product_id).includes(datum.product_id)) {
             setAddCart([...addCart, datum]);
             notify('Item added to cart');
@@ -48,6 +54,7 @@ const Root = () => {
     return (
         <CartContext.Provider value={{ handleAddToCart, addCart, handleDelete, handleSort, setAddCart, notify }}>
             <WishContext.Provider value={{ addWish, setAddWish, handleWishDelete }}>
+                <ToastContainer />
                 <div>
                     <Navbar />
                     <Outlet />

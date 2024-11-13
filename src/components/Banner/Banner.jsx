@@ -1,5 +1,9 @@
+import { Link } from 'react-router-dom'
 import banner from '../../assets/banner.jpg'
+import { useContext } from 'react'
+import { AuthContext } from '../../Context/CreateContext'
 export default function Banner() {
+    const { user } = useContext(AuthContext)
     return (
         <div className="relative flex flex-col items-center mb-52 md:mb-72">
             <div className="hero bg-[#9538E2] pt-10 pb-56">
@@ -9,7 +13,10 @@ export default function Banner() {
                         <p className="py-6 md:w-3/4">
                             Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!
                         </p>
-                        <button className="btn bg-white text-[#9538E2] rounded-full font-bold"><a href="#main">Get Started</a></button>
+                        {
+                            !user ? <Link to='/auth/login' className="btn bg-white text-[#9538E2] rounded-full font-bold">Get Started</Link> :
+                                <a href='#main' className="btn bg-white text-[#9538E2] rounded-full font-bold">Get Started</a>
+                        }
                     </div>
                 </div>
             </div>

@@ -65,7 +65,7 @@ export default function Dashboard() {
                         <h3 className="text-xl font-bold">Total Cost: {addCart.reduce((total, item) => total + item.price, 0).toFixed(2)}</h3>
                         <div className="flex flex-col md:flex-row gap-3">
                             <button className="btn btn-outline text-[#9538E2] rounded-full hover:bg-[#9538E2] hover:border-[#9538E2]" onClick={handleSort}>Sort by Price<ImSortAmountDesc /></button>
-                            <button className="btn rounded-full bg-gradient-to-r from-[#9538E2] to-[#7114f3] border-[#9538E2] px-7 text-white" onClick={handlePurchase}>Purchase</button>
+                            <button className={`btn rounded-full bg-gradient-to-r from-[#9538E2] to-[#7114f3] border-[#9538E2] px-7 text-white`} onClick={handlePurchase}>Purchase</button>
 
                         </div>
                     </div>

@@ -7,12 +7,14 @@ import { useContext } from "react";
 import { CartContext } from "../Context/cartContext";
 import { WishContext } from "../Context/wishContext";
 import PageTitle from "../PageTitle/PageTitle";
+import { AuthContext } from "../../Context/CreateContext";
 
 
 export default function ProductDetails() {
     const { id } = useParams();
     const data = useLoaderData();
     const datum = data.find(datum => datum.product_id === id);
+    const { user } = useContext(AuthContext)
 
 
     const notifyWish = (message) => {
@@ -28,6 +30,11 @@ export default function ProductDetails() {
     const wish = useContext(WishContext)
     const { addWish, setAddWish } = wish;
     const handleAddToWish = (datum) => {
+        if (!user) {
+            notifyWish('Please log in to continue.');
+            return;
+        }
+
         if (!addWish.map(item => item.product_id).includes(datum.product_id)) {
             setAddWish([...addWish, datum]);
             notifyWish('Item added to wishlist');

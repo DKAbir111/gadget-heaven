@@ -5,7 +5,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Root from './components/Root/Root';
 import ErrorPage from './components/Error/ErrorPage';
@@ -14,6 +13,10 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Statistics from './components/Statistics/Statistics';
 import ProductDetails from './components/Details/ProductDetails';
 import HelpAndSupport from './components/HelpAndSupport/HelpAndSupport';
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
+import AuthProvider from './AuthProvider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -29,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: <PrivateRoute><Dashboard /></PrivateRoute>,
       },
       {
         path: "/statistics",
@@ -46,13 +49,22 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
         loader: () => fetch('/Data.json')
       },
+      {
+        path: "/auth/login",
+        element: <Login />,
+      },
+      {
+        path: "/auth/signup",
+        element: <SignUp />,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
-    <ToastContainer />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
